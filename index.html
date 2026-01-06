@@ -278,8 +278,18 @@
     }
 
     @media (max-width: 520px){
+      .overlay-text,
+      .eth-one,
+      .monitor,
+      .business,
+      .socset,
+      .consult-hint,
+      .character-mask{
+        display:none;
+      }
+
       .center-text{
-        top:54%;
+        top:10vh;
         width:92vw;
         padding:14px 12px 14px 14px;
       }
@@ -287,143 +297,21 @@
       .center-block h4{ font-size:16px; }
       .center-block p{ font-size:14px; }
 
-      .overlay-text{
-        width:clamp(180px, 62vw, 320px);
-        right:-0.2cm;
-        top:-0.2cm;
+      .character-area{
+        height:58vh;
+        max-height:58vh;
+        width:clamp(220px, 76vw, 420px);
+        transform: translateX(-50%) translateX(0cm) translateY(-0.4cm);
       }
-      .eth-one{
-        width:clamp(160px, 32vw, 280px);
-        right:0.5vw;
-        bottom:0.5vh;
-      }
-      .monitor{
-        width:clamp(120px, 30vw, 220px);
-        left:0.5vw;
-        bottom:calc(2vh + 6cm);
-      }
-      .business{
-        width:clamp(130px, 32vw, 240px);
-        left:0.5vw;
-        bottom:calc(2vh + 2.2cm);
-      }
-      .socset{
-        width:clamp(80px, 18vw, 140px);
-        left:0.5vw;
-        bottom:calc(2vh - 0.2cm);
+      .character-final{
+        height:58vh;
+        transform: translateX(-50%) translateX(0cm) translateY(-0.4cm);
       }
       .tgk{
-        width:clamp(170px, 48vw, 300px);
-        transform: translateX(-50%) translateX(3.8cm) translateY(0.8cm);
-      }
-      .consult-hint{
-        font-size:15px;
-        bottom:calc(6vh + 0.6cm);
-        transform: translateX(-50%) translateX(3.8cm);
+        width:clamp(170px, 56vw, 320px);
+        transform: translateX(-50%) translateX(0cm) translateY(0.6cm);
       }
     }
-
-    /* ===== Mobile simplified layout: text + character + Telegram button ===== */
-    @media (max-width: 900px){
-      /* allow reading by scrolling on mobile */
-      body{
-        overflow-x: hidden;
-        overflow-y: auto;
-        -webkit-overflow-scrolling: touch;
-      }
-      .scene{ min-height: 100vh; }
-
-      /* hide all extra decorations on mobile */
-      .overlay-text,
-      .eth-one,
-      .monitor,
-      .business,
-      .socset,
-      .tgk{ display:none !important; }
-
-      /* text block: top, readable */
-      .center-text{
-        top: 10vh;
-        transform: translateX(-50%);
-        width: min(92vw, 560px);
-        padding: 16px 14px 260px 16px; /* reserve space for character + button */
-        pointer-events: none;
-        z-index: 5;
-      }
-
-      /* character: centered at bottom, smaller */
-      .character-area{
-        left: 50%;
-        bottom: 0;
-        height: 40vh;
-        max-height: 40vh;
-        width: clamp(220px, 70vw, 420px);
-        transform: translateX(-50%) translateY(0);
-        z-index: 2;
-      }
-      .character-final{
-        left: 50%;
-        bottom: 0;
-        height: 40vh;
-        max-height: 40vh;
-        transform: translateX(-50%) translateY(0);
-        z-index: 2;
-      }
-
-      /* hint off (button replaces it) */
-      .consult-hint{ display:none; }
-
-      /* Telegram button */
-      .tgk-btn{
-        position: fixed;
-        left: 50%;
-        bottom: 10vh;
-        transform: translateX(-50%);
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        gap: 10px;
-        padding: 14px 18px;
-        border-radius: 14px;
-        background: rgba(15, 20, 28, 0.78);
-        border: 1px solid rgba(255, 255, 255, 0.12);
-        color: #f5f6f7;
-        font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
-        font-size: 16px;
-        font-weight: 700;
-        text-decoration: none;
-        text-shadow: 0 8px 16px rgba(0,0,0,0.35);
-        box-shadow: 0 10px 22px rgba(0,0,0,0.28);
-        z-index: 8;
-        user-select: none;
-        -webkit-tap-highlight-color: transparent;
-      }
-      .tgk-btn::before{
-        content: "✈️";
-        font-size: 18px;
-        line-height: 1;
-      }
-    }
-
-    @media (max-width: 520px){
-      .center-text{
-        top: 9vh;
-        width: 92vw;
-        padding-bottom: 300px;
-      }
-      .character-area,
-      .character-final{
-        height: 36vh;
-        max-height: 36vh;
-        width: clamp(210px, 76vw, 380px);
-      }
-      .tgk-btn{
-        bottom: 9vh;
-        width: min(92vw, 420px);
-        text-align: center;
-      }
-    }
-
   </style>
 </head>
 
@@ -473,8 +361,6 @@
     <div class="consult-hint">Нажми для консультации 👇</div>
     <a href="https://t.me/evg0x1" target="_blank" rel="noopener" aria-label="Открыть Telegram">
       <img src="tgk.png" alt="ТГК" class="tgk">
-    
-      <span class="tgk-btn">Открыть Telegram · @evg0x1</span>
     </a>
   </div>
 
