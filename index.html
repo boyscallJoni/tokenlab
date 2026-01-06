@@ -322,6 +322,102 @@
         transform: translateX(-50%) translateX(3.8cm);
       }
     }
+
+    /* ===== Mobile layout fix (keeps desktop intact) ===== */
+    @media (max-width: 900px){
+      /* allow vertical scroll on mobile/tablet if content doesn't fit */
+      body{
+        overflow-x: hidden;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+      }
+      .scene{
+        min-height: 100vh;
+      }
+
+      /* remove the big overlay panel that перекрывает текст */
+      .overlay-text{ display:none; }
+
+      /* hide decorative floating elements on mobile to keep readability */
+      .monitor,
+      .business,
+      .socset,
+      .eth-one{
+        display:none;
+      }
+
+      /* text: move to top, readable column */
+      .center-text{
+        top: 12vh;
+        transform: translateX(-50%);
+        width: min(92vw, 560px);
+        padding: 16px 14px 16px 16px;
+        pointer-events: none;
+      }
+
+      /* character: center, lower, smaller so it doesn't перекрывает контент */
+      .character-area{
+        left: 50%;
+        bottom: 0;
+        height: 52vh;
+        max-height: 52vh;
+        width: clamp(260px, 68vw, 520px);
+        transform: translateX(-50%) translateY(0);
+      }
+      .character-final{
+        left: 50%;
+        bottom: 0;
+        height: 52vh;
+        max-height: 52vh;
+        transform: translateX(-50%) translateY(0);
+      }
+      .character-mask{
+        /* keep click/hover area aligned with character after reposition */
+        left: 35%;
+        width: 30%;
+        height: 70%;
+      }
+
+      /* CTA + tgk: align to bottom center */
+      .consult-hint{
+        left: 50%;
+        bottom: 14vh;
+        transform: translateX(-50%);
+        text-align: center;
+        font-size: 16px;
+      }
+      .tgk{
+        left: 50%;
+        bottom: 6vh;
+        transform: translateX(-50%);
+        width: clamp(190px, 58vw, 340px);
+      }
+    }
+
+    @media (max-width: 520px){
+      .center-text{
+        top: 10vh;
+        width: 92vw;
+      }
+      .character-area{
+        height: 48vh;
+        max-height: 48vh;
+        width: clamp(240px, 78vw, 420px);
+      }
+      .character-final{
+        height: 48vh;
+        max-height: 48vh;
+      }
+      .consult-hint{
+        bottom: 16vh;
+        font-size: 15px;
+      }
+      .tgk{
+        bottom: 6vh;
+        width: clamp(170px, 64vw, 300px);
+      }
+    }
+
   </style>
 </head>
 
@@ -394,7 +490,6 @@
   </script>
 </body>
 </html>
-
 
 
 
