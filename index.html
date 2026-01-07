@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Token Lab — алгоритмы, AI и трейдинг</title>
 
   <style>
@@ -30,9 +30,9 @@
       position:fixed;
       inset:0;
       z-index:9999;
-      background: rgba(0,0,0,0.72);
-      backdrop-filter: blur(6px);
-      -webkit-backdrop-filter: blur(6px);
+      background: rgba(0,0,0,0.55);
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
       align-items:center;
       justify-content:center;
       padding:24px;
@@ -40,32 +40,32 @@
 
     .mobile-gate__card{
       width:min(520px, 92vw);
-      background: rgba(14,18,24,0.78);
-      border:1px solid rgba(255,255,255,0.14);
+      background: rgba(10,14,20,0.42); /* прозрачнее, чтобы было видно персонажа */
+      border:1px solid rgba(255,255,255,0.12);
       border-radius:18px;
-      padding:22px 18px;
+      padding:20px 18px;
       color:#f5f6f7;
       font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
       text-align:center;
-      box-shadow: 0 18px 42px rgba(0,0,0,0.45);
+      box-shadow: 0 16px 36px rgba(0,0,0,0.4);
     }
 
     .mobile-gate__title{
       margin:0 0 10px 0;
-      font-size:18px;
+      font-size:17px;
       font-weight:800;
       letter-spacing:0.2px;
     }
 
     .mobile-gate__text{
-      margin:0 0 14px 0;
+      margin:0 0 16px 0;
       font-size:14px;
-      line-height:1.45;
+      line-height:1.5;
       color:#e9eef2;
     }
 
     .mobile-tg-btn{
-      width:min(320px, 78vw);
+      width:min(300px, 75vw);
       height:auto;
       display:inline-block;
       filter: drop-shadow(0 10px 18px rgba(0,0,0,0.28));
@@ -86,6 +86,7 @@
       user-select:none;
       filter: drop-shadow(0 10px 18px rgba(0,0,0,0.24));
     }
+
     .eth-one{
       position:absolute;
       right:calc(2vw - 0.9cm);
@@ -328,9 +329,10 @@
     }
 
     @media (max-width: 520px){
-      /* показываем заглушку и зовём в TG */
+      /* показываем заглушку на мобилке */
       .mobile-gate{ display:flex; }
 
+      /* твои элементы внизу как были — не трогаем, просто скрываем как у тебя */
       .overlay-text,
       .eth-one,
       .monitor,
@@ -373,8 +375,11 @@
   <!-- Заглушка ТОЛЬКО для мобилки -->
   <div class="mobile-gate" role="dialog" aria-modal="true" aria-label="Мобильная версия">
     <div class="mobile-gate__card">
-      <h2 class="mobile-gate__title">Я ещё не закончил мобильную версию</h2>
-      <p class="mobile-gate__text">Переходи в Telegram — там всё самое важное 👇</p>
+      <h2 class="mobile-gate__title">Я ещё не закончил мобильную версию сайта</h2>
+      <p class="mobile-gate__text">
+        Открой с ПК или переходи в Telegram —<br>
+        там всё самое важное 👇
+      </p>
 
       <a href="https://t.me/evg0x1" target="_blank" rel="noopener" aria-label="Открыть Telegram">
         <img src="tgk.png" alt="Перейти в Telegram" class="mobile-tg-btn">
@@ -426,7 +431,6 @@
 
     <div class="consult-hint">Нажми для консультации 👇</div>
 
-    <!-- Десктоп/планшет кнопка (не трогал) -->
     <a href="https://t.me/evg0x1" target="_blank" rel="noopener" aria-label="Открыть Telegram">
       <img src="tgk.png" alt="ТГК" class="tgk">
     </a>
@@ -450,5 +454,6 @@
       });
     });
   </script>
+
 </body>
 </html>
